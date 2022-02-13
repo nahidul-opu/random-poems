@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g72@=kr@-@c@a7z@x2@spb+bb%kkl5n)ba#^a=zx+xjw8%nvv%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['random-poems.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'random-poems.herokuapp.com']
 
 
 # Application definition
@@ -124,6 +124,12 @@ STATIC_URL = '/static/'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
+    os.path.join(BASE_DIR,  'poems/templates'),
+    # Add to this list all the locations containing your static files
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
