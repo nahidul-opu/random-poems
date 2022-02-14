@@ -5,7 +5,7 @@ import json
 import urllib.request
 import urllib.parse
 import urllib
-
+import pandas as pd
 # Create your views here.
 
 
@@ -29,8 +29,10 @@ def get_poem(choice):
         lines = data[0]['lines']
         return title, author, lines
     elif choice == "bangla":
-        cnt = models.bengaliPoems.objects.count()
-        poem = models.bengaliPoems.objects.get(pk=random.randrange(0, cnt))
+        #cnt = models.bengaliPoems.objects.count()
+        #poem = models.bengaliPoems.objects.get(pk=random.randrange(0, cnt))
+        df = pd.read_csv('./staticfiles/poem.csv')
+        poem = df.loc[random.randrange(0, df.shape[0])]
         poem.poem = (poem.poem).split('\n')
         return poem.title, poem.poet, poem.poem
 
