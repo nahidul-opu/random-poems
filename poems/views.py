@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from matplotlib.pyplot import title
 from scipy import rand
 from . import models
 import random
