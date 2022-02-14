@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from scipy import rand
 from . import models
 import random
 import json
@@ -7,7 +6,6 @@ import urllib.request
 import urllib.parse
 import urllib
 
-import poems
 # Create your views here.
 
 
