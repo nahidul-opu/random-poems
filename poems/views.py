@@ -33,6 +33,8 @@ def get_poem(choice):
         #poem = models.bengaliPoems.objects.get(pk=random.randrange(0, cnt))
         df = pd.read_csv('./staticfiles/poem.csv')
         poem = df.loc[random.randrange(0, df.shape[0])]
+        while not isinstance(poem.poem, str):
+            poem = df.loc[random.randrange(0, df.shape[0])]
         poem.poem = (poem.poem).split('\n')
         return poem.title, poem.poet, poem.poem
 
