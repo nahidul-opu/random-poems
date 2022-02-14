@@ -1,6 +1,10 @@
 body {
-  background: white url("../images/background.jpg") no-repeat;
+  background: white url("../images/background.jpg");
   color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 div {
   align-items: center;
@@ -11,4 +15,8 @@ div {
   width: 50%;
   padding: 10px;
   text-align: center;
+  text-justify: auto;
+}
+html {
+  scroll-behavior: smooth;
 }
